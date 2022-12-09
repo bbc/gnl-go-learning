@@ -22,19 +22,19 @@ func (g *Game) Score() int {
 			score += 10 + g.spareBonus(frameIndex)
 			frameIndex += 2
 		} else {
-			score += g.sumOfBallsInFrame(frameIndex)
+			score += g.sumOfPinsInFrame(frameIndex)
 			frameIndex += 2
 		}
 	}
 	return score
 }
 
-func (g *Game) sumOfBallsInFrame(frameIndex int) int {
+func (g *Game) sumOfPinsInFrame(frameIndex int) int {
 	return g.rolls[frameIndex] + g.rolls[frameIndex+1]
 }
 
 func (g *Game) isSpare(frameIndex int) bool {
-	return g.sumOfBallsInFrame(frameIndex) == 10
+	return g.sumOfPinsInFrame(frameIndex) == 10
 }
 
 func (g *Game) isStrike(frameIndex int) bool {
