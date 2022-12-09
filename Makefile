@@ -6,9 +6,7 @@ SHELL=/bin/bash
 help:
 	@echo 'make init        Install and prepare dependencies and support tools'
 
-init: init-tools clean
-
-init-tools:
+init:
 	rm -rf $(BIN_DIR) $(TMP_DIR)
 	mkdir -p $(BIN_DIR) $(TMP_DIR)
 	rm -rf $(TMP_DIR)/gnl-tools-go
